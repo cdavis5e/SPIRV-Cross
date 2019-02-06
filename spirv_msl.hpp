@@ -430,6 +430,7 @@ protected:
 	std::string get_type_address_space(const SPIRType &type);
 	SPIRType &get_stage_in_struct_type();
 	SPIRType &get_stage_out_struct_type();
+	SPIRType &get_patch_stage_in_struct_type();
 	SPIRType &get_patch_stage_out_struct_type();
 	std::string get_tess_factor_struct_name();
 	void emit_atomic_func_op(uint32_t result_type, uint32_t result_id, const char *op, uint32_t mem_order_1,
@@ -470,6 +471,7 @@ protected:
 	MSLResourceBinding next_metal_resource_index;
 	uint32_t stage_in_var_id = 0;
 	uint32_t stage_out_var_id = 0;
+	uint32_t patch_stage_in_var_id = 0;
 	uint32_t patch_stage_out_var_id = 0;
 	uint32_t stage_in_ptr_var_id = 0;
 	uint32_t stage_out_ptr_var_id = 0;
@@ -483,6 +485,7 @@ protected:
 	std::string qual_pos_var_name;
 	std::string stage_in_var_name = "in";
 	std::string stage_out_var_name = "out";
+	std::string patch_stage_in_var_name = "patchIn";
 	std::string patch_stage_out_var_name = "patchOut";
 	std::string sampler_name_suffix = "Smplr";
 	std::string swizzle_name_suffix = "Swzl";
